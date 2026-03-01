@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
     project: {
@@ -20,7 +21,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     <span key={tag} className="tag">{tag}</span>
                 ))}
             </div>
-            <Link to={project.link} className="read-more">Read Case Study →</Link>
+            <Link to={project.link} className="read-more">
+                View Case Study <ArrowRight size={16} />
+            </Link>
         </div>
     );
 }
