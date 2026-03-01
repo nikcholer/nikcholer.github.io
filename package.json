@@ -1,18 +1,15 @@
 {
   "name": "nikcholer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Portfolio site — AI Orchestration & Systems Architecture",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nik Cholerton",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "lucide-react": "^0.575.0",
     "react": "^19.2.4",
