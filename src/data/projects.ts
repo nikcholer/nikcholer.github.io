@@ -1,5 +1,12 @@
 export const projects = [
     {
+        id: "cryptic-solver",
+        title: "Cryptic Crossword Solver: Neuro-Symbolic AI",
+        summary: "Combining LLM semantic reasoning with deterministic Python algorithms to solve cryptic crosswords — a demonstration of the Foreman/Worker orchestration pattern.",
+        tags: ["neuro-symbolic", "python", "agents", "orchestration"],
+        link: "/case-studies/cryptic-solver",
+    },
+    {
         id: "incident-management",
         title: "Incident Management: AI-accelerated SDLC",
         summary: "From vague helpdesk email to working prototype using agent workflows + deterministic scripts.",
@@ -8,7 +15,7 @@ export const projects = [
     },
     {
         id: "skills-pipeline",
-        title: "Skills Pipeline: LLM + deterministic tooling",
+        title: "Skills Pipeline: LLM + Deterministic Tooling",
         summary: "A repeatable pattern: LLM drafts → scripts validate/transform → LLM refines.",
         tags: ["tooling", "automation", "prompting"],
         link: "/case-studies/skills-pipeline",

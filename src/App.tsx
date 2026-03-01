@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import CaseStudy from "./pages/CaseStudy";
+import CrypticSolverStudy from "./pages/CrypticSolverStudy";
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/case-studies/cryptic-solver" element={<CrypticSolverStudy />} />
                         <Route path="/case-studies/:id" element={<CaseStudy />} />
                         <Route path="*" element={<Home />} />
                     </Routes>
