@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Workflow, Cpu, LayoutDashboard, Search, RefreshCw } from 'lucide-react';
+import { ArrowLeft, Workflow } from 'lucide-react';
 
 export default function CrypticSolverStudy() {
     return (
