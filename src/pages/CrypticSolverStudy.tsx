@@ -62,9 +62,6 @@ export default function CrypticSolverStudy() {
                 </section>
 
                 <footer className="case-study-footer">
-                    <p className="case-study-status">
-                        Repository will be made public once additional polish is complete.
-                    </p>
                     <Link to="/projects" className="hero-cta">
                         ← Back to all projects
                     </Link>
