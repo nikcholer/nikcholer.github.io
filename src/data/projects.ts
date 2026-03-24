@@ -19,6 +19,7 @@ export const projects = [
         summary: "From vague helpdesk email to working prototype using agent workflows + deterministic scripts.",
         tags: ["agents", "requirements", "workflow", "react", ".NET"],
         link: "/case-studies/incident-management",
+        status: "upcoming",
     },
     {
         id: "skills-pipeline",
@@ -26,5 +27,6 @@ export const projects = [
         summary: "A repeatable pattern: LLM drafts → scripts validate/transform → LLM refines.",
         tags: ["tooling", "automation", "prompting"],
         link: "/case-studies/skills-pipeline",
+        status: "upcoming",
     },
 ];
