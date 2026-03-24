@@ -1,4 +1,13 @@
-export const projects = [
+export interface Project {
+    id: string;
+    title: string;
+    summary: string;
+    tags: string[];
+    link: string;
+    status?: 'active' | 'upcoming';
+}
+
+export const projects: Project[] = [
     {
         id: "coding-standards",
         title: "Coding Standards Extractor: Mining Implicit Rules",
