@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import About from "./pages/About";
 import CaseStudy from "./pages/CaseStudy";
 import CrypticSolverStudy from "./pages/CrypticSolverStudy";
+import CodingStandardsStudy from "./pages/CodingStandardsStudy";
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                         <Route path="/projects" element={<Projects />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/case-studies/cryptic-solver" element={<CrypticSolverStudy />} />
+                        <Route path="/case-studies/coding-standards" element={<CodingStandardsStudy />} />
                         <Route path="/case-studies/:id" element={<CaseStudy />} />
                         <Route path="*" element={<Home />} />
                     </Routes>

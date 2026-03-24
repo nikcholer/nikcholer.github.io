@@ -1,5 +1,12 @@
 export const projects = [
     {
+        id: "coding-standards",
+        title: "Coding Standards Extractor: Mining Implicit Rules",
+        summary: "A pipeline that mines historical GitHub pull request discussions to extract a team's implicit coding standards and generate actionable agent configurations. Entirely AI-generated.",
+        tags: ["agentic-coding", "pipeline", "python", "knowledge-extraction"],
+        link: "/case-studies/coding-standards",
+    },
+    {
         id: "cryptic-solver",
         title: "Cryptic Crossword Solver: Neuro-Symbolic AI",
         summary: "Combining LLM semantic reasoning with deterministic Python algorithms to solve cryptic crosswords — a demonstration of the Foreman/Worker orchestration pattern.",
