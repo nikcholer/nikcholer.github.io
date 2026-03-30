@@ -1,30 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap');
 
 /* ─── Design Tokens ──────────────────────────────────── */
 :root {
   /* Palette */
-  --bg-primary: #0a0e1a;
-  --bg-secondary: #111827;
-  --bg-card: rgba(17, 24, 39, 0.6);
-  --bg-card-hover: rgba(30, 41, 59, 0.7);
-  --border-subtle: rgba(99, 102, 241, 0.12);
-  --border-hover: rgba(99, 102, 241, 0.3);
-
+  --bg-primary: #F4F4F0;      /* Vintage Paper / Off-white */
+  --bg-secondary: #e6e6e2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --border-subtle: rgba(0, 0, 0, 0.15);
+  --border-heavy: #0d0d0d;    /* Sharp Brutalist Black */
+  
   /* Accent */
-  --accent-primary: #818cf8;
-  --accent-secondary: #6366f1;
-  --accent-glow: rgba(99, 102, 241, 0.15);
-  --accent-cyan: #22d3ee;
-  --accent-emerald: #34d399;
+  --accent-primary: #FF3300;  /* Safety Orange */
+  --accent-secondary: #0033FF; /* Blueprint blue */
+  --accent-glow: transparent;
 
   /* Text */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #0d0d0d;
+  --text-secondary: #333333;
+  --text-muted: #666666;
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -37,22 +35,20 @@
   --space-4xl: 6rem;
 
   /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-sm: 0px;  /* Sharp edges for tactical feel */
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
 
   /* Transitions */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: 150ms var(--ease-out);
-  --transition-base: 250ms var(--ease-out);
-  --transition-slow: 400ms var(--ease-out);
+  --transition-fast: 0ms; /* Brutal instant snaps */
+  --transition-base: 100ms ease;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px var(--accent-glow);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 4px 4px 0px 0px rgba(13, 13, 13, 1); /* Hard shadow drop */
+  --shadow-glow: none;
 }
 
 /* ─── Reset & Base ───────────────────────────────────── */
@@ -66,75 +62,93 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Remove smooth scroll for brutalism */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono); /* By default text is monospace (tech context) */
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.5;
   color: var(--text-primary);
   background: var(--bg-primary);
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
-/* Subtle grid background */
+/* Noise and Scanline Texture Overlay */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 64px 64px, 64px 64px;
+  z-index: 9999;
   pointer-events: none;
-  z-index: 0;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-#root {
-  position: relative;
-  z-index: 1;
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.05) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 9998;
+  pointer-events: none;
 }
 
 /* ─── Typography ─────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
-h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+h1 { font-size: clamp(3rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 
 p {
   color: var(--text-secondary);
-  max-width: 65ch;
+  max-width: 70ch;
+  font-family: var(--font-mono); /* Force monospace for body text */
 }
 
 a {
-  color: var(--accent-primary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: all var(--transition-fast);
 }
 
 a:hover {
-  color: var(--accent-cyan);
+  color: var(--bg-primary);
+  background: var(--accent-primary);
+  text-decoration-color: var(--accent-primary);
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 /* ─── Scrollbar ──────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
+  border-left: 2px solid var(--border-heavy);
 }
 
 ::-webkit-scrollbar-track {
@@ -142,10 +156,10 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 4px;
+  background: var(--border-heavy);
+  border: 1px solid var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  background: var(--accent-primary);
 }

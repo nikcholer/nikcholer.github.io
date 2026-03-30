@@ -7,7 +7,7 @@ export default function Home() {
             <section className="hero">
                 <div className="hero-eyebrow">
                     <span className="dot" />
-                    Open to opportunities
+                    [ SYSTEM STATUS: ONLINE ]
                 </div>
                 <h1>
                     Nik Cholerton
@@ -18,10 +18,10 @@ export default function Home() {
                 <p className="subtitle">
                     Accelerating the SDLC with agentic workflows, LLM-driven tooling,
                     and deterministic automation. Turning vague requirements into
-                    working prototypes.
+                    working system architectures.
                 </p>
                 <Link to="/projects" className="hero-cta">
-                    View my work <ArrowRight size={18} />
+                    ENGAGE WORKFLOW <ArrowRight size={18} />
                 </Link>
             </section>
 
